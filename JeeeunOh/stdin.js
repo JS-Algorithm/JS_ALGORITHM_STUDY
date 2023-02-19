@@ -1,3 +1,2 @@
-const readFileSyncAddress = '/dev/stdin';
-
-const input = require('fs').readFileSync(readFileSyncAddress).toString().trimEnd().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().split('\n');
