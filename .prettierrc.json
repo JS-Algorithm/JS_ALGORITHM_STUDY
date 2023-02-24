@@ -4,11 +4,7 @@
   "tabWidth": 2,
   "useTabs": false,
   "trailingComma": "all",
-<<<<<<< HEAD
-  "printWidth": 200,
-=======
   "printWidth": 80,
->>>>>>> 254ff9279d6c2d02706078c454423abc3446befe
   "singleAttributePerLine": false,
   "bracketSpacing": false
 }
