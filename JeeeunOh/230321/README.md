@@ -8,4 +8,4 @@
 
 5. [programmers.택배 배달과 수거하기](https://school.programmers.co.kr/learn/courses/30/lessons/150369)
 
-6. [programmers.미로탈출](https://school.programmers.co.kr/learn/courses/30/lessons/159993)
+6. [programmers.미로탈출](https://school.programmers.co.kr/learn/courses/30/lessons/159993)✅
