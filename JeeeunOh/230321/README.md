@@ -1,6 +1,6 @@
 1. [boj13325번.이진트리](https://www.acmicpc.net/problem/13325)
 
-2. [programmers.이중우선순위큐](https://school.programmers.co.kr/learn/courses/30/lessons/42628)
+2. [programmers.이중우선순위큐](https://school.programmers.co.kr/learn/courses/30/lessons/42628)✅
 
 3. [programmers.N-Queen](https://school.programmers.co.kr/learn/courses/30/lessons/12952)✅
 
