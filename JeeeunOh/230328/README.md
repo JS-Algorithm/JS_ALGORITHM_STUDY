@@ -1,4 +1,4 @@
-1. [boj21772번.가희의고구마먹방](https://www.acmicpc.net/problem/21772)
+1. [boj21772번.가희의고구마먹방](https://www.acmicpc.net/problem/21772)✅
 
 2. [boj9372번.상근이의여행](https://www.acmicpc.net/problem/9372)✅
 
