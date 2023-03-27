@@ -44,6 +44,7 @@ const solution = (key, lock) => {
   //키를 회전 시키면서 탐색
   for (let i = 0; i < 4; i++) {
     key = rotationKey(key, i);
+
     //키를 이동시키면서 탐색
     for (let j = 0; j <= arr.length - key.length; j++) {
       for (let k = 0; k <= arr[0].length - key[0].length; k++) {

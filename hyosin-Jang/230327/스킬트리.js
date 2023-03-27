@@ -18,7 +18,6 @@ function solution(skill, skill_trees) {
   }
 
   // 2. 제거한 값에서 CBD에 대한 인덱스 추출
-
   let arr = [];
   for (let i = 0; i < skill_trees.length; i++) {
     let temp = [];

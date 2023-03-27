@@ -5,7 +5,6 @@ let result = [];
 let T = input.shift();
 
 input = input.map((i) => i.split(' ').map(Number));
-//console.log('input', input, T);
 
 for (let i = 0; i < T; i++) {
   const [n, m] = input[0];

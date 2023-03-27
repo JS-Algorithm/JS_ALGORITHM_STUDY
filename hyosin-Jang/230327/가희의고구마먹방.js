@@ -27,7 +27,7 @@ let max = 0;
 
 // 3. dfs 탐색
 function dfs(visited, start, t = 0, s = 0) {
-  // 3-1. 고구마가 있고, 방문한 적 없다면 없다면 s 증가
+  // 3-1. 고구마가 있고, 방문한 적 없다면 없다면 s증가
   let [x, y] = start;
   if (board[x][y] === 'S' && visited[x][y] === 0) {
     s++;
