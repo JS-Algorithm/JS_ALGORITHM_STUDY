@@ -1,4 +1,4 @@
-1. [programmers.귤 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/138476)
+1. [programmers.귤 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/138476)✅
 
 2. [programmers.메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411)
 
