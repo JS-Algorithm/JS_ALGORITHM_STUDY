@@ -1,6 +1,6 @@
 1. [programmers.귤 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/138476)✅
 
-2. [programmers.메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411)
+2. [programmers.메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411)✅
 
 3. [boj13022번.늑대와 올바른 단어](https://www.acmicpc.net/problem/13022)
 
