@@ -10,7 +10,8 @@ function solution(operations) {
         break;
       case 'D': // 삭제
         if (pq.length === 0) break;
-        if (data === 1) { // 최댓값 삭제
+        if (data === 1) {
+          // 최댓값 삭제
           pq.sort((a, b) => a - b);
         } else if (data === -1) {
           pq.sort((a, b) => b - a); // 오름차순
