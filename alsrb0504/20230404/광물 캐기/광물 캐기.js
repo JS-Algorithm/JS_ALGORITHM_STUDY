@@ -4,9 +4,9 @@ function solution(picks, minerals) {
   const PICKS_SIZE = picks.reduce((acc, cur) => acc + cur, 0);
   const MINERAL_SIZE = minerals.length;
   const NEED_MINE = Math.ceil(MINERAL_SIZE / 5);
-  // 5개의 광물 캘 때, 곡괭이에 따라 비용을 저장할 costs 배열 선언
+  // 5개의 광물 캘 때, 곡괭이에 따라 비용을 저장할 costs 배열 선언.
   // [[5, 25, 125], ...] : 각 원소는 [다이아 곡괭이 비용, 철괭이.. , 돌괭이..]
-  let costs = Array.from({ length: NEED_MINE }, () => new Array(3).fill(0));
+  let costs = Array.from({length: NEED_MINE}, () => new Array(3).fill(0));
 
   // 광물 캐는 비용 구하는 로직
   // idx를 5씩 증가시키며 광물 종류에 따라 비용 계산
@@ -21,10 +21,10 @@ function solution(picks, minerals) {
     const costs_idx = Math.floor(idx / 5);
 
     stack.forEach((el) => {
-      if (el === "diamond") {
+      if (el === 'diamond') {
         costs[costs_idx][1] += 5;
         costs[costs_idx][2] += 25;
-      } else if (el === "iron") {
+      } else if (el === 'iron') {
         costs[costs_idx][1] += 1;
         costs[costs_idx][2] += 5;
       } else {
