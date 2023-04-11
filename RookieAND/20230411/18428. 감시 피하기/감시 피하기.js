@@ -35,8 +35,8 @@ function getCombination(arr, n) {
 
   arr.forEach((fixed, idx, origin) => {
     const rest = origin.slice(idx + 1);
-    const combis = getCombination(rest, n - 1);
-    const attached = combis.map((combi) => [fixed, ...combi]);
+    const combinations = getCombination(rest, n - 1);
+    const attached = combinations.map((combination) => [fixed, ...combination]);
     result.push(...attached);
   });
 
