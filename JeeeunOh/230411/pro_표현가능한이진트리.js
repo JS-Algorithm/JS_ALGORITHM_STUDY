@@ -4,15 +4,11 @@ function solution(numbers) {
     
     // 깊이(level)에 따른 string 총 길이 반환하는 함수
     const calcDepth = (level) => {
-        let res = 1;
-        for(let i=1 ; i<level ; i++){
-            res+=Math.pow(2, i);
-        }
-        return res;
+        return 2**level-1;
     }
     
-    numbers.forEach((item)=>{
-        let bi = item.toString(2);
+    numbers.forEach((item)=>{ // 1, 3, 7...
+        let bi = item.toString(2); // 11001 : 5
         let level = 1;
         while(true){ // 깊이 더해가면서 해당 string의 깊이 찾기
             let temp = calcDepth(level);
