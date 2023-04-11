@@ -50,12 +50,11 @@ for (const comb of possibleComb) {
   let isCatched = false;
   // 3개의 좌표에 대해서 벽을 세운다.
   comb.map(([i, j]) => (matrix[i][j] = 'W'));
+
   // 선생님들 중 한 명이라도 학생을 잡았다면, 잡혔음을 체크한다.
-  for (const [teacherY, teacherX] of teacherPos) {
-    if (checkTeacherCanCatchStudent(teacherY, teacherX)) {
-      isCatched = true;
-    }
-  }
+  isCatched = teacherPos.some(([teacherY, teacherX]) =>
+    checkTeacherCanCatchStudent(teacherY, teacherX),
+  );
   // 만약 잡히지 않은 케이스가 있다면 즉시 프로그램을 종료한다.
   if (!isCatched) {
     console.log('YES');

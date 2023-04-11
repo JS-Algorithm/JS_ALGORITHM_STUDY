@@ -34,9 +34,7 @@ function solution(numbers) {
     const currentLength = binary.length;
     // 현재 트리의 길이가 1이거나, 전부 0 혹은 1로만 이루어진 경우라면 true
     const isAllSame = new Set(binary.split('')).size === 1;
-    if (currentLength === 1 || isAllSame) {
-      return true;
-    }
+    if (isAllSame) return true;
 
     const middleIndex = Math.floor(currentLength / 2);
     // 루트 노드가 0이라면 false를 반환해야 한다.
