@@ -6,4 +6,4 @@
 
 4. [programmers.택배상자](https://school.programmers.co.kr/learn/courses/30/lessons/131704)
 
-5. [programmers.디펜스 게임](https://school.programmers.co.kr/learn/courses/30/lessons/142085)
+5. [programmers.디펜스 게임](https://school.programmers.co.kr/learn/courses/30/lessons/142085)✅
