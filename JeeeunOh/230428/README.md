@@ -1,4 +1,4 @@
-1. [boj1937번.욕심쟁이 판다](https://www.acmicpc.net/problem/1937)
+1. [boj1937번.욕심쟁이 판다](https://www.acmicpc.net/problem/1937)✅
 
 2. [programmers.등산코스 정하기](https://school.programmers.co.kr/learn/courses/30/lessons/118669)
 
