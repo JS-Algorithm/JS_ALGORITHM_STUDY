@@ -4,6 +4,6 @@
 
 3. [programmers.양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
 
-4. [programmers.택배상자](https://school.programmers.co.kr/learn/courses/30/lessons/131704)
+4. [programmers.택배상자](https://school.programmers.co.kr/learn/courses/30/lessons/131704)✅
 
 5. [programmers.디펜스 게임](https://school.programmers.co.kr/learn/courses/30/lessons/142085)✅
