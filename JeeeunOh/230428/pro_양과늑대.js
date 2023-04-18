@@ -1,3 +1,4 @@
+// 참고 : https://juyami.tistory.com/104
 // 0은 양, 1은 늑대, 연결정보
 function solution(info, edges) {
     const tree = Array.from({length: info.length}, () => []);
