@@ -1,4 +1,4 @@
-name: 'Auto Assign GA Action'
+name: 'Auto Assign'
 on:
   pull_request:
     types: [opened, ready_for_review]
@@ -7,6 +7,7 @@ jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.2.5
+      - uses: kentaro-m/auto-assign-action@v1.2.4
         with:
-          configuration-path: '.github/auto-assign-setting.yml
+          configuration-path: '.github/auto-assign-setting.yml'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
