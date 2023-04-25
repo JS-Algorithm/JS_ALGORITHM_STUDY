@@ -25,9 +25,5 @@ numberOfReviewers: 0
 
 # A list of labels to be skipped the process that add reviewers if pull requests include it
 filterLabels:
-  include:
-    - 📘 Solved
-    - 📕 Unsolved
-  # Not run
   exclude:
     - 📗 Docs Update
