@@ -3,16 +3,11 @@ function solution(topping) {
     let a = new Map();
     let b = new Map();
     
-    for(let i=0 ; i<topping.length; i++){
-        if(a.get(topping[i])){
-            a.set(topping[i], a.get(topping[i])+1);
-        } else {
-            a.set(topping[i], 1);
-        }
+    for(const cur of topping){
+        a.set(cur, a.has(cur)? a.get(cur)+1 : 1)
     }
     
-    for(let i=0 ; i<topping.length; i++){ // 0~i까지 b거
-        let cur = topping[i];
+    for(const cur of topping){ // 0~i까지 b거
         // a에서 빼주기
         a.set(cur, a.get(cur)-1);
         if(a.get(cur)===0){
