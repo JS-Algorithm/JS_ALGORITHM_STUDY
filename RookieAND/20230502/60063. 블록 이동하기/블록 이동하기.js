@@ -6,6 +6,7 @@ function solution(board) {
   // 좌표 값을 문자열로 치환하여 (y1, x1, y2, x2) 방문 여부를 체크한다.
   const visit = new Set(['1112']);
 
+  // 상하좌우 테두리를 만들기 위해서 N + 2 만큼의 영역을 초기에 생성한다.
   const new_board = Array.from({length: N + 2}, () => new Array(N + 2).fill(1));
   // 상하좌우 테두리를 제외한 나머지는 원래의 board 에 맞게 채우면 된다.
   for (let i = 0; i < N; i++) {
@@ -14,6 +15,7 @@ function solution(board) {
     }
   }
 
+  // BFS 탐색 시작, queue가 빌 때까지 경로를 탐색한다.
   while (queue.length) {
     const [left, right, count] = queue.shift();
 
@@ -23,11 +25,11 @@ function solution(board) {
     // 그렇지 않을 경우, 이동 가능한 다음 위치를 탐색하는 함수를 실행시킨다.
     const nextPosition = getNextPosition(left, right, new_board);
     for (const next of nextPosition) {
-      const [next_left, next_right] = next;
-      const key = next_left.join('') + next_right.join('');
-      if (!visit.has(key)) {
-        queue.push([next_left, next_right, count + 1]);
-        visit.add(key);
+      const [nextLeftLoc, nextRightLoc] = next;
+      const currentLoc = `${nextLeftLoc.join('')}${nextRightLoc.join('')}`;
+      if (!visit.has(currentLoc)) {
+        queue.push([nextLeftLoc, nextRightLoc, count + 1]);
+        visit.add(currentLoc);
       }
     }
   }
@@ -36,59 +38,59 @@ function solution(board) {
 const getNextPosition = (left, right, board) => {
   // 이동 가능한 좌표를 담은 배열 result
   const result = [];
-  // 0번째 인덱스가 y 값이고, 1번째 인덱스가 x 값임을 명시하기 위한 상수
-  const X = 1,
-    Y = 0;
-  const moves = [
+  const direction = [
     [-1, 0],
     [1, 0],
     [0, -1],
     [0, 1],
   ];
 
-  // 상하좌우 이동이 가능한지 먼저 체크하고, 이동이 가능한 것들만 result에 넣는다.
-  for (const move of moves) {
-    const [dy, dx] = move;
-    const next_left = [left[Y] + dy, left[X] + dx];
-    const next_right = [right[Y] + dy, right[X] + dx];
+  const [leftY, leftX] = left;
+  const [rightY, rightX] = right;
 
-    if (
-      board[next_left[Y]][next_left[X]] === 0 &&
-      board[next_right[Y]][next_right[X]] === 0
-    ) {
-      result.push([next_left, next_right]);
+  for (const [dy, dx] of direction) {
+    const [nextLeftY, nextLeftX] = [leftY + dy, leftX + dx];
+    const [nextRightY, nextRightX] = [rightY + dy, rightX + dx];
+
+    if (!board[nextLeftY][nextLeftX] && !board[nextRightY][nextRightX]) {
+      result.push([
+        [nextLeftY, nextLeftX],
+        [nextRightY, nextRightX],
+      ]);
     }
   }
 
-  // 앞 뒤, 좌 우를 구분 짓는 요소 toward
-  const toward = [-1, 1];
-
-  // Y 좌표가 같다면 로봇이 가로로 위치해 있다는 의미이다.
-  if (left[Y] === right[Y]) {
-    for (const dy of toward) {
-      // 현재 로봇을 기점으로 아래 두 좌표가 비었는지, 위 두 좌표가 비었는지를 체크한다.
-      // 만약 아래 두 좌표가 비었다면 두 개의 회전 경로가 이동 가능하다고 판별된다.
-      if (
-        board[left[Y] + dy][left[X]] === 0 &&
-        board[right[Y] + dy][right[X]] === 0
-      ) {
-        result.push([left, [left[Y] + dy, left[X]]]);
-        result.push([[right[Y] + dy, right[X]], right]);
-      }
-    }
-  } else {
-    // 그렇지 않은 경우 로봇이 세로로 위치해 있다는 의미이므로, 두 좌표가 비었는지를 체크한다.
-    for (const dx of toward) {
-      // 현재 로봇을 기점으로 좌측의 두 좌표가 비었는지, 우측의 두 좌표가 비었는지를 체크한다.
-      if (
-        board[left[Y]][left[X] + dx] === 0 &&
-        board[right[Y]][right[X] + dx] === 0
-      ) {
-        result.push([[left[Y], left[X] + dx], left]);
-        result.push([right, [right[Y], right[X] + dx]]);
+  // 만약 로봇이 가로로 놓여 있다면, 로봇을 기준으로 위 아래 여유 공간을 체크해야 한다.
+  if (leftY === rightY) {
+    for (const dy of [1, -1]) {
+      // 만약 아래 혹은 위 2칸에 대해서 여유 공간이 존재한다면, 두 개의 회전 케이스를 추가한다.
+      if (!board[leftY + dy][leftX] && !board[rightY + dy][rightX]) {
+        result.push([
+          [leftY + dy, leftX],
+          [leftY, leftX],
+        ]);
+        result.push([
+          [rightY + dy, rightX],
+          [rightY, rightX],
+        ]);
       }
     }
   }
-
+  // 만약 로봇이 세로로 놓여 있다면, 로봇을 기준으로 좌우 여백 공간을 체크한다.
+  else {
+    // 만약 왼쪽 혹은 오른쪽 2칸에 대해서 여유 공간이 존재한다면, 두 개의 회전 케이스를 추가한다.
+    for (const dx of [1, -1]) {
+      if (!board[leftY][leftX + dx] && !board[rightY][rightX + dx]) {
+        result.push([
+          [leftY, leftX + dx],
+          [leftY, leftX],
+        ]);
+        result.push([
+          [rightY, rightX + dx],
+          [rightY, rightX],
+        ]);
+      }
+    }
+  }
   return result;
 };
