@@ -4,6 +4,6 @@
 
 3. [[골드 5] 알약](https://www.acmicpc.net/problem/4811)✅
 
-4. [[Lv. 2] 이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368)
+4. [[Lv. 2] 이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368)✅
 
-5. [[Lv. 3] 블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063)
+5. [[Lv. 3] 블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063)✅
