@@ -2,8 +2,8 @@ function solution(users, emoticons) {
     var answer = [0, 0];
     let pers = [10, 20, 30, 40];
     
-    const dfs = (idx, temp) => { // 현재 이모티콘 idx, 할인율 저장 배열 temp
-        if(idx===emoticons.length){ // 마지막 이모티콘까지 탐색했다면,
+    const dfs = (temp) => { // 현재 이모티콘 idx, 할인율 저장 배열 temp
+        if(temp.length===emoticons.length){ // 마지막 이모티콘까지 탐색했다면,
             let userCost = Array(users.length).fill(0);
             users.map((user, user_idx)=>{ // 1. 유저가 원하는 할인율과 실할인율 비교
                 temp.map((per, per_idx)=>{
@@ -31,12 +31,12 @@ function solution(users, emoticons) {
             return;
         } else { // 정해야 할 할인율이 있다면 마저 정하기
             for(const per of pers){
-                dfs(idx+1, [...temp, per]);
+                dfs([...temp, per]);
             }
         }
     }
     
-    dfs(0, [])
+    dfs([])
     
     return answer;
 }
