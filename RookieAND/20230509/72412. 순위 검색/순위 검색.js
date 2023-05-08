@@ -1,4 +1,5 @@
 function solution(info, querys) {
+  // 배열 자체를 처리하지 않고, 나머지 요소를 key로 변환하여 "hashMap" 을 만들어야 했다.
   const hashData = new Map();
   info.forEach((value) => {
     const data = value.split(' ');
@@ -11,6 +12,7 @@ function solution(info, querys) {
     );
   });
 
+  // Map을 순회하면서 각각의 요소들을 모두 오름차순 한다.
   for (let [key, value] of hashData) {
     hashData.set(
       key,
@@ -18,6 +20,7 @@ function solution(info, querys) {
     );
   }
 
+  // 점수를 따로 추출하여 각 요소를 순회해 쿼리 결과를 산출한다.
   const search = (hashData, conditions) => {
     const score = conditions.pop();
     return Array.from(hashData.keys())
@@ -30,6 +33,7 @@ function solution(info, querys) {
       );
   };
 
+  // 이진 탐색 함수 binarySearch
   const binarySearch = (arr, target) => {
     let left = 0;
     let right = arr.length;
