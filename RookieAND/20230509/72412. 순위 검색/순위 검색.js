@@ -52,3 +52,22 @@ function solution(info, querys) {
     return search(hashData, conditions);
   });
 }
+
+// 오답 풀이 : 당연하지만 시간 초과
+function solution(info, query) {
+  const db = info.map((elm) => elm.split(' '));
+
+  const result = query.map((q) => {
+    // and을 기준으로 좌우 공백까지 포함시켜 split 진행
+    let formattedQuery = q.replaceAll(' and', '');
+    formattedQuery = formattedQuery.split(' ');
+    const queryResult = formattedQuery.reduce((acc, cur) => {
+      if (cur === '-') return acc;
+      return Number.isNaN(Number(cur))
+        ? acc.filter((col) => col.includes(cur))
+        : acc.filter(([, , , , score]) => Number(score) >= Number(cur));
+    }, db);
+    return queryResult.length;
+  });
+  return result;
+}
