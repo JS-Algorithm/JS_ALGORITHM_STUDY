@@ -71,3 +71,42 @@ function solution(info, query) {
   });
   return result;
 }
+
+// 오답 풀이 2 : 양이 많아서 이분 탐색까지 도입했으나 시간 초과
+function solution(info, query) {
+  const db = info.map((elm) => elm.split(' '));
+  // 이분 탐색을 위해 점수를 내림차순 정렬해야 한다.
+  db.sort(([, , , , aScore], [, , , , bScore]) => aScore - bScore);
+
+  const binarySearch = (score, arr) => {
+    let [start, end] = [0, arr.length];
+    while (start < end) {
+      let mid = Math.floor((start + end) / 2);
+
+      if (arr[mid] >= score) {
+        end = mid;
+      } else if (arr[mid] < score) {
+        start = mid + 1;
+      }
+    }
+    return start;
+  };
+
+  const result = query.map((q) => {
+    // and을 기준으로 좌우 공백까지 포함시켜 split 진행
+    let formattedQuery = q.replaceAll(' and', '');
+    formattedQuery = formattedQuery.split(' ');
+    const queryResult = formattedQuery.reduce((acc, cur) => {
+      if (cur === '-') return acc;
+      if (Number.isNaN(Number(cur)))
+        return acc.filter((col) => col.includes(cur));
+      const start = binarySearch(
+        cur,
+        acc.map(([, , , , score]) => Number(score)),
+      );
+      return acc.slice(start);
+    }, db);
+    return queryResult.length;
+  });
+  return result;
+}
