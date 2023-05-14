@@ -21,13 +21,12 @@ function solution(users, emoticons) {
         answer = [finalMembership, finalSellPrice];
       }
       return;
-    } else {
-      for (const discountRate of discountRates) {
-        selectedDiscountRates.push(discountRate);
-        dfs(selectedDiscountRates);
-        // 만약 결과가 끝났다면 다시 원래 배열로 돌리고, 다음 할인율을 추가한다.
-        selectedDiscountRates.pop(discountRate);
-      }
+    }
+    for (const discountRate of discountRates) {
+      selectedDiscountRates.push(discountRate);
+      dfs(selectedDiscountRates);
+      // 만약 결과가 끝났다면 다시 원래 배열로 돌리고, 다음 할인율을 추가한다.
+      selectedDiscountRates.pop(discountRate);
     }
   }
 
