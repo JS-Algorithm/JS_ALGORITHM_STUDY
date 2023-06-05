@@ -1,3 +1,6 @@
+// [0,0] 부터 한칸씩 이동하면서, 해당 칸이 X가 아니면 DFS
+// visited로 방문 여부 기록
+
 function DFS(maps, array, i, j, visited, maxI, maxJ) {
   array.push(maps[i][j]);
   if (i + 1 < maxJ) {
