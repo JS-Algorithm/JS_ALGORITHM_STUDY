@@ -19,8 +19,8 @@ function solution(n, lost, reserve) {
 
   for (let i = 0; i < lost.length; i++) {
     if (lost[i] !== -1) {
-      const front = reserve.findIndex((e) => e === lost[i] - 1);
-      const back = reserve.findIndex((e) => e === lost[i] + 1);
+      const front = reserve.indexOf(lost[i] - 1);
+      const back = reserve.indexOf(lost[i] + 1);
       if (front !== -1) {
         //앞번호가 여벌이 있는 경우
         reserve[front] = -1;
