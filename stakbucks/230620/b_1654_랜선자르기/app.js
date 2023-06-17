@@ -6,10 +6,7 @@ function solution(input) {
   const [K, N] = input[0].split(' ').map(Number);
 
   // 오영식이 갖고 있는 랜선 배열
-  const arr = [];
-  for (let i = 1; i < input.length; i++) {
-    arr.push(Number(input[i]));
-  }
+const arr = input.slice(1).map(Number);
 
   // [1,...(arr에서 최댓값)] 배열에서 중간값 선택
   // 해당 중간값을 쓸 랜선의 길이로 설정했을 때 만들 수 있는 랜선의 수 sum
