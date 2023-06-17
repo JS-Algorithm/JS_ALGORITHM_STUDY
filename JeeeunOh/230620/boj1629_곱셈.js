@@ -2,15 +2,15 @@ const readFileSyncAddress = process.platform === 'linux' ? '/dev/stdin' : '/User
 
 const input = require('fs').readFileSync(readFileSyncAddress).toString().trimEnd().split('\n');
 
-const [A, B, C] = input[0].split(' ').map(Number);
+const [A, B, C] = input[0].split(' ').map(BigInt);
 
-function calc(cnt) {
-  if (cnt === 1) return A % C;
+const calc = (cnt) => {
+  if (cnt === 1n) return A % C;
 
-  let temp = calc(Math.floor(cnt / 2)) % C;
+  let temp = calc(cnt / 2n) % C;
 
-  if (cnt % 2 === 0) return (temp * temp) % C; // 짝수
-  else return (((temp * temp) % C) * A) % C; // 홀수
-}
+  if (cnt % 2n === 0n) return (temp * temp) % C;
+  else return (temp * temp * (A % C)) % C;
+};
 
-console.log(calc(B));
+console.log(calc(B).toString());
