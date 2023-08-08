@@ -1,0 +1,5 @@
+1. [[골드 5] 내려가기](https://www.acmicpc.net/problem/2096) ✅
+2. [[실버 1] 카드 구매하기2](https://www.acmicpc.net/problem/16194) ✅
+3. [[Lv 2] 2개 이하로 다른 비트](https://school.programmers.co.kr/learn/courses/30/lessons/77885) ✅
+4. [[Lv 2] 괄호 변환](https://school.programmers.co.kr/learn/courses/30/lessons/60058)
+5. [[Lv 2] 방문 길이](https://school.programmers.co.kr/learn/courses/30/lessons/49994) ✅
