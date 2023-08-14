@@ -1,0 +1,5 @@
+1. [[골드 5] 전깃줄](https://www.acmicpc.net/problem/2565)
+2. [[LV 2] 주차 요금 계산](https://school.programmers.co.kr/learn/courses/30/lessons/92341)
+3. [[LV 2]전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577)
+4. [[LV 2] 더 맵게](https://school.programmers.co.kr/learn/courses/30/lessons/42626)
+5. [[LV 2] 주식가격](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
