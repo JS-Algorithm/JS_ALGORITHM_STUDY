@@ -1,0 +1,5 @@
+1. [[골드 5] 동전](https://www.acmicpc.net/problem/9084)
+2. [[LV 2] 전력망을 둘로 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
+3. [[Lv2] 뉴스 클러스터링](https://school.programmers.co.kr/learn/courses/30/lessons/17677)
+4. [[Lv2] 압축](https://school.programmers.co.kr/learn/courses/30/lessons/17684)
+5. [[골드 5] 4연산](https://www.acmicpc.net/problem/14395)
