@@ -1,35 +1,4 @@
 function solution(m, musicinfos) {
-  //시간 계산하는 함수
-  const calcTime = (start, end) => {
-    const startArr = start.split(':').map(Number);
-    const endArr = end.split(':').map(Number);
-    if (startArr[1] > endArr[1]) {
-      endArr[0]--;
-      endArr[1] += 60;
-    }
-    return (endArr[0] - startArr[0]) * 60 + (endArr[1] - startArr[1]); // 몇 분 재생됐는지 리턴
-  };
-  // '#' 소문자로 변환해주고 전체 재생내용 악보 리턴해주는 함수
-  const remakeNote = (str, time) => {
-    str.forEach((i, v) => {
-      if (i === '#') {
-        str[v - 1] = str[v - 1].toLowerCase();
-        str.splice(v, 1);
-      }
-    });
-    // m 인 경우
-    if (time === -1) return str.join('');
-
-    let i = 0;
-    while (str.length < time) {
-      str.push(str[i++ % str.length]);
-    }
-    while (str.length > time) {
-      str.pop();
-    }
-
-    return str.join('');
-  };
   // 각 음악정보에 대한 해시테이블 만들기
   const map = new Map();
   let index = 0;
@@ -62,4 +31,36 @@ function solution(m, musicinfos) {
   });
 
   return candidates.length ? candidates[0] : '(None)';
+
+  //시간 계산하는 함수
+  function calcTime(start, end) {
+    const startArr = start.split(':').map(Number);
+    const endArr = end.split(':').map(Number);
+    if (startArr[1] > endArr[1]) {
+      endArr[0]--;
+      endArr[1] += 60;
+    }
+    return (endArr[0] - startArr[0]) * 60 + (endArr[1] - startArr[1]); // 몇 분 재생됐는지 리턴
+  }
+  // '#' 소문자로 변환해주고 전체 재생내용 악보 리턴해주는 함수
+  function remakeNote(str, time) {
+    str.forEach((v, i) => {
+      if (v === '#') {
+        str[i - 1] = str[i - 1].toLowerCase();
+        str.splice(i, 1);
+      }
+    });
+    // m 인 경우
+    if (time === -1) return str.join('');
+
+    let i = 0;
+    while (str.length < time) {
+      str.push(str[i++ % str.length]);
+    }
+    while (str.length > time) {
+      str.pop();
+    }
+
+    return str.join('');
+  }
 }
